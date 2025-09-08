@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Funcionários - Avaliação Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              sage: {
+                50: "#f8faf8",
+                100: "#e8f0e8",
+                200: "#d1e1d1",
+                300: "#a8c8a8",
+                400: "#7ba87b",
+                500: "#5a8a5a",
+                600: "#4a7c4a",
+              },
+              lavender: {
+                50: "#faf9ff",
+                100: "#f0edff",
+                200: "#e4ddff",
+                300: "#cfc0ff",
+                400: "#b399ff",
+                500: "#9b7aff",
+                600: "#8b5cf6",
+              },
+              peach: {
+                50: "#fff8f5",
+                100: "#ffede5",
+                200: "#ffd9cc",
+                300: "#ffbfa8",
+                400: "#ff9b7a",
+                500: "#ff7b54",
+                600: "#f56565",
+              },
+              powder: {
+                50: "#f8fafc",
+                100: "#f1f5f9",
+                200: "#e2e8f0",
+                300: "#cbd5e1",
+                400: "#94a3b8",
+                500: "#64748b",
+                600: "#475569",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-sage-50 via-lavender-50 to-peach-50 min-h-screen font-light"
+  >
+    <div class="max-w-5xl mx-auto p-8">
+      <!-- Header -->
+      <div
+        class="bg-white/70 backdrop-blur-sm rounded-3xl shadow-sm border border-powder-200/50 mb-12"
+      >
+        <div class="p-12 text-center">
+          <h1 class="text-4xl font-light text-powder-600 mb-4 tracking-wide">
+            Sistema de Funcionários
+          </h1>
+          <p class="text-powder-400 text-lg font-light mb-8">
+            Documento de Requisitos Técnicos
+          </p>
+
+          <div class="flex justify-center items-center gap-8 text-sm">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-sage-300 rounded-full"></div>
+              <span class="text-powder-500">POO - Java</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-lavender-300 rounded-full"></div>
+              <span class="text-powder-500">3-4 horas</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-peach-300 rounded-full"></div>
+              <span class="text-powder-500">Nível Básico</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-12 pb-12">
+          <div class="bg-sage-50/50 rounded-2xl p-6 border border-sage-200/30">
+            <p class="text-powder-600 text-center leading-relaxed">
+              Desenvolver sistema básico de gerenciamento aplicando conceitos
+              fundamentais de Programação Orientada a Objetos
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conceitos Abordados -->
+      <div
+        class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-powder-200/30 mb-12"
+      >
+        <div class="p-8 text-center">
+          <h2 class="text-2xl font-light text-powder-600 mb-8 tracking-wide">
+            Conceitos Fundamentais
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-sage-50/60 rounded-2xl p-6 border border-sage-200/40 hover:bg-sage-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-sage-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-sage-600 text-xl">🏗️</span>
+              </div>
+              <h3 class="font-medium text-sage-700 mb-2">Classes e Objetos</h3>
+              <p class="text-sage-600 text-sm font-light">
+                Estruturação e instanciação
+              </p>
+            </div>
+
+            <div
+              class="bg-lavender-50/60 rounded-2xl p-6 border border-lavender-200/40 hover:bg-lavender-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-lavender-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-lavender-600 text-xl">🔒</span>
+              </div>
+              <h3 class="font-medium text-lavender-700 mb-2">Encapsulamento</h3>
+              <p class="text-lavender-600 text-sm font-light">
+                Getters, setters e visibilidade
+              </p>
+            </div>
+
+            <div
+              class="bg-peach-50/60 rounded-2xl p-6 border border-peach-200/40 hover:bg-peach-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-peach-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-peach-600 text-xl">🔧</span>
+              </div>
+              <h3 class="font-medium text-peach-700 mb-2">Construtores</h3>
+              <p class="text-peach-600 text-sm font-light">
+                Inicialização de objetos
+              </p>
+            </div>
+
+            <div
+              class="bg-powder-50/60 rounded-2xl p-6 border border-powder-200/40 hover:bg-powder-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-powder-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-powder-600 text-xl">⚙️</span>
+              </div>
+              <h3 class="font-medium text-powder-700 mb-2">Métodos</h3>
+              <p class="text-powder-600 text-sm font-light">
+                Procedimentos e funções
+              </p>
+            </div>
+
+            <div
+              class="bg-sage-50/60 rounded-2xl p-6 border border-sage-200/40 hover:bg-sage-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-sage-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-sage-600 text-xl">📊</span>
+              </div>
+              <h3 class="font-medium text-sage-700 mb-2">Arrays</h3>
+              <p class="text-sage-600 text-sm font-light">
+                Manipulação de coleções
+              </p>
+            </div>
+
+            <div
+              class="bg-lavender-50/60 rounded-2xl p-6 border border-lavender-200/40 hover:bg-lavender-50/80 transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 bg-lavender-200/50 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="text-lavender-600 text-xl">🧬</span>
+              </div>
+              <h3 class="font-medium text-lavender-700 mb-2">Herança</h3>
+              <p class="text-lavender-600 text-sm font-light">
+                Especialização de classes
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requisitos do Sistema -->
+      <div class="space-y-6">
+        <!-- Requisito 1 -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-sage-200/30 hover:shadow-md transition-all duration-300"
+        >
+          <div class="p-8 cursor-pointer" onclick="_toggleSection('req1')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-sage-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-sage-600 font-medium">1</span>
+                </div>
+                <h3 class="text-xl font-light text-powder-600">
+                  Classe Funcionario (Base)
+                </h3>
+              </div>
+              <div class="w-6 h-6 text-sage-400">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div id="req1" class="px-8 pb-8 hidden">
+            <div class="mb-8">
+              <p class="text-powder-600 leading-relaxed font-light">
+                Desenvolver a classe base
+                <code
+                  class="bg-sage-100/50 px-2 py-1 rounded-lg text-sm font-medium text-sage-700"
+                  >Funcionario</code
+                >
+                com atributos essenciais e métodos fundamentais para representar
+                um funcionário da empresa.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div
+                class="bg-sage-50/40 rounded-2xl p-6 border border-sage-200/30"
+              >
+                <h5
+                  class="font-medium text-sage-700 mb-4 flex items-center gap-3"
+                >
+                  <div
+                    class="w-8 h-8 bg-sage-200/50 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-sage-600 text-sm">📝</span>
+                  </div>
+                  Atributos Obrigatórios
+                </h5>
+                <ul class="space-y-3 text-sage-600 text-sm font-light">
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 bg-sage-400 rounded-full"></span
+                    >nome (String)
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 bg-sage-400 rounded-full"></span
+                    >funcao (String)
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 bg-sage-400 rounded-full"></span
+                    >salario (double)
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 bg-sage-400 rounded-full"></span>id
+                    (int)
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="bg-lavender-50/40 rounded-2xl p-6 border border-lavender-200/30"
+              >
+                <h5
+                  class="font-medium text-lavender-700 mb-4 flex items-center gap-3"
+                >
+                  <div
+                    class="w-8 h-8 bg-lavender-200/50 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-lavender-600 text-sm">💡</span>
+                  </div>
+                  Dicas de Implementação
+                </h5>
+                <ul class="space-y-3 text-lavender-600 text-sm font-light">
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                    ></span
+                    >Todos os atributos devem ser privados
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                    ></span
+                    >Crie getters e setters para todos
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                    ></span
+                    >Implemente toString() personalizado
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                    ></span
+                    >Valide salário > 0 no setter
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-8 bg-peach-50/40 rounded-2xl p-6 border border-peach-200/30"
+            >
+              <h5
+                class="font-medium text-peach-700 mb-4 flex items-center gap-3"
+              >
+                <div
+                  class="w-8 h-8 bg-peach-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-peach-600 text-sm">🎯</span>
+                </div>
+                Métodos Requeridos
+              </h5>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div
+                  class="bg-white/60 rounded-xl p-4 border border-peach-200/20"
+                >
+                  <code class="text-sm text-peach-700 font-medium"
+                    >Funcionario(nome, funcao, salario)</code
+                  >
+                  <p class="text-xs text-peach-600 mt-2 font-light">
+                    Construtor com parâmetros
+                  </p>
+                </div>
+                <div
+                  class="bg-white/60 rounded-xl p-4 border border-peach-200/20"
+                >
+                  <code class="text-sm text-peach-700 font-medium"
+                    >aplicarAumento(percentual)</code
+                  >
+                  <p class="text-xs text-peach-600 mt-2 font-light">
+                    Aumenta salário em %
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 2 -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-lavender-200/30 hover:shadow-md transition-all duration-300"
+        >
+          <div class="p-8 cursor-pointer" onclick="_toggleSection('req2')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-lavender-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-lavender-600 font-medium">2</span>
+                </div>
+                <h3 class="text-xl font-light text-powder-600">
+                  Classes Especializadas (Herança)
+                </h3>
+              </div>
+              <div class="w-6 h-6 text-lavender-400">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div id="req2" class="p-6 hidden">
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold text-slate-800 mb-3">
+                📋 Especificação
+              </h4>
+              <p class="text-slate-600 leading-relaxed">
+                Criar classes especializadas que herdam de Funcionario,
+                demonstrando polimorfismo e especialização de comportamentos.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                <h5 class="font-semibold text-purple-800 mb-3">
+                  👔 Classe Gerente
+                </h5>
+                <ul class="space-y-2 text-purple-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-purple-400 rounded-full mt-1.5"
+                    ></span
+                    >Herda de Funcionario
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-purple-400 rounded-full mt-1.5"
+                    ></span
+                    >Atributo: bonus (double)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-purple-400 rounded-full mt-1.5"
+                    ></span
+                    >Override aplicarAumento() - dobra o percentual
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-purple-400 rounded-full mt-1.5"
+                    ></span
+                    >Método calcularSalarioTotal()
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                <h5 class="font-semibold text-orange-800 mb-3">
+                  👨‍💼 Classe Operador
+                </h5>
+                <ul class="space-y-2 text-orange-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Herda de Funcionario
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Atributo: horasExtras (int)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Método calcularHorasExtras()
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Override toString() com horas extras
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 bg-green-50 rounded-lg p-4 border border-green-200"
+            >
+              <h5
+                class="font-semibold text-green-800 mb-3 flex items-center gap-2"
+              >
+                <span>💡</span> Dicas de Implementação
+              </h5>
+              <ul class="space-y-2 text-green-700 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-green-400 rounded-full mt-1.5"></span
+                  >Use <code class="bg-white px-1 rounded">extends</code> para
+                  herança
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-green-400 rounded-full mt-1.5"></span
+                  >Chame <code class="bg-white px-1 rounded">super()</code> nos
+                  construtores
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-green-400 rounded-full mt-1.5"></span
+                  >Use <code class="bg-white px-1 rounded">@Override</code> para
+                  sobrescrever métodos
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-green-400 rounded-full mt-1.5"></span
+                  >Demonstre polimorfismo na classe principal
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 3 -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-peach-200/30 hover:shadow-md transition-all duration-300"
+        >
+          <div class="p-8 cursor-pointer" onclick="_toggleSection('req3')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-peach-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-peach-600 font-medium">3</span>
+                </div>
+                <h3 class="text-xl font-light text-powder-600">
+                  Classe GerenciadorFuncionarios
+                </h3>
+              </div>
+              <div class="w-6 h-6 text-peach-400">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div id="req3" class="p-6 hidden">
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold text-slate-800 mb-3">
+                📋 Especificação
+              </h4>
+              <p class="text-slate-600 leading-relaxed">
+                Desenvolver classe para gerenciar um array de funcionários,
+                implementando operações básicas de CRUD e consultas.
+              </p>
+            </div>
+
+            <div
+              class="bg-slate-50 rounded-lg p-4 border border-slate-200 mb-6"
+            >
+              <h5 class="font-semibold text-slate-800 mb-3">
+                📊 Estrutura de Dados
+              </h5>
+              <div class="bg-white rounded p-3 border border-slate-200">
+                <code class="text-sm text-slate-700"
+                  >private Funcionario[] funcionarios = new
+                  Funcionario[50];</code
+                >
+                <p class="text-xs text-slate-500 mt-1">
+                  Array fixo para armazenar funcionários
+                </p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                <h5 class="font-semibold text-green-800 mb-3">
+                  ⚙️ Métodos Obrigatórios
+                </h5>
+                <ul class="space-y-2 text-green-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >adicionarFuncionario(Funcionario)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >removerFuncionario(String nome)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >listarFuncionarios()
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >buscarPorNome(String nome)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >calcularTotalSalarios()
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <h5
+                  class="font-semibold text-blue-800 mb-3 flex items-center gap-2"
+                >
+                  <span>💡</span> Dicas de Implementação
+                </h5>
+                <ul class="space-y-2 text-blue-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mt-1.5"></span
+                    >Controle posições vazias no array
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mt-1.5"></span
+                    >Use loops for para percorrer
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mt-1.5"></span
+                    >Valide se funcionário existe antes de remover
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mt-1.5"></span
+                    >Retorne null se não encontrar
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 bg-yellow-50 rounded-lg p-4 border border-yellow-200"
+            >
+              <h5 class="font-semibold text-yellow-800 mb-3">
+                🔍 Métodos de Consulta Avançada
+              </h5>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white rounded p-3 border border-yellow-200">
+                  <code class="text-sm text-yellow-800"
+                    >buscarPorFuncao(String funcao)</code
+                  >
+                  <p class="text-xs text-yellow-600 mt-1">
+                    Retorna array com funcionários da função
+                  </p>
+                </div>
+                <div class="bg-white rounded p-3 border border-yellow-200">
+                  <code class="text-sm text-yellow-800"
+                    >aplicarAumentoGeral(double percentual)</code
+                  >
+                  <p class="text-xs text-yellow-600 mt-1">
+                    Aplica aumento para todos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito 4 -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-powder-200/30 hover:shadow-md transition-all duration-300"
+        >
+          <div class="p-8 cursor-pointer" onclick="_toggleSection('req4')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-powder-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-powder-600 font-medium">4</span>
+                </div>
+                <h3 class="text-xl font-light text-powder-600">
+                  Classe Principal (Demonstração)
+                </h3>
+              </div>
+              <div class="w-6 h-6 text-powder-400">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div id="req4" class="p-6 hidden">
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold text-slate-800 mb-3">
+                📋 Especificação
+              </h4>
+              <p class="text-slate-600 leading-relaxed">
+                Criar classe principal que demonstra todas as funcionalidades
+                implementadas, seguindo um roteiro específico de testes.
+              </p>
+            </div>
+
+            <div
+              class="bg-slate-50 rounded-lg p-4 border border-slate-200 mb-6"
+            >
+              <h5 class="font-semibold text-slate-800 mb-3">
+                🎯 Roteiro de Demonstração
+              </h5>
+              <div class="space-y-3">
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >1</span
+                  >
+                  <span class="text-slate-700"
+                    >Criar instâncias de diferentes tipos de funcionários</span
+                  >
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >2</span
+                  >
+                  <span class="text-slate-700"
+                    >Adicionar funcionários ao gerenciador</span
+                  >
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >3</span
+                  >
+                  <span class="text-slate-700"
+                    >Listar todos os funcionários</span
+                  >
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >4</span
+                  >
+                  <span class="text-slate-700"
+                    >Buscar funcionário por nome</span
+                  >
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >5</span
+                  >
+                  <span class="text-slate-700"
+                    >Aplicar aumento geral de 10%</span
+                  >
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >6</span
+                  >
+                  <span class="text-slate-700">Calcular total de salários</span>
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >7</span
+                  >
+                  <span class="text-slate-700">Remover um funcionário</span>
+                </div>
+                <div
+                  class="bg-white rounded p-3 border border-slate-200 flex items-center gap-3"
+                >
+                  <span
+                    class="bg-blue-100 text-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
+                    >8</span
+                  >
+                  <span class="text-slate-700"
+                    >Listar funcionários por função</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                <h5 class="font-semibold text-orange-800 mb-3">
+                  📝 Dados de Teste
+                </h5>
+                <ul class="space-y-2 text-orange-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >3 Operadores com salários diferentes
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >2 Gerentes com bônus variados
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Nomes e funções realistas
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-orange-400 rounded-full mt-1.5"
+                    ></span
+                    >Salários entre R$ 1.500 e R$ 8.000
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                <h5
+                  class="font-semibold text-green-800 mb-3 flex items-center gap-2"
+                >
+                  <span>💡</span> Dicas de Implementação
+                </h5>
+                <ul class="space-y-2 text-green-700 text-sm">
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >Use System.out.println() com títulos claros
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >Demonstre polimorfismo na listagem
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >Formate valores monetários
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span
+                      class="w-2 h-2 bg-green-400 rounded-full mt-1.5"
+                    ></span
+                    >Adicione separadores visuais
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entregáveis -->
+      <div
+        class="bg-white/60 backdrop-blur-sm rounded-3xl shadow-sm border border-powder-200/30 mt-12"
+      >
+        <div class="p-8 text-center">
+          <h2 class="text-2xl font-light text-powder-600 mb-8 tracking-wide">
+            Entregáveis do Projeto
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+              <h3
+                class="font-medium text-powder-700 mb-4 flex items-center justify-center gap-3"
+              >
+                <div
+                  class="w-8 h-8 bg-sage-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-sage-600 text-sm">📁</span>
+                </div>
+                Arquivos Obrigatórios
+              </h3>
+              <div class="space-y-3">
+                <div
+                  class="bg-sage-50/40 rounded-xl p-4 border border-sage-200/30"
+                >
+                  <code class="text-sm text-sage-700 font-medium"
+                    >Funcionario.java</code
+                  >
+                  <p class="text-xs text-sage-600 mt-1 font-light">
+                    Classe base com encapsulamento
+                  </p>
+                </div>
+                <div
+                  class="bg-lavender-50/40 rounded-xl p-4 border border-lavender-200/30"
+                >
+                  <code class="text-sm text-lavender-700 font-medium"
+                    >Gerente.java</code
+                  >
+                  <p class="text-xs text-lavender-600 mt-1 font-light">
+                    Classe especializada
+                  </p>
+                </div>
+                <div
+                  class="bg-peach-50/40 rounded-xl p-4 border border-peach-200/30"
+                >
+                  <code class="text-sm text-peach-700 font-medium"
+                    >Operador.java</code
+                  >
+                  <p class="text-xs text-peach-600 mt-1 font-light">
+                    Classe especializada
+                  </p>
+                </div>
+                <div
+                  class="bg-powder-50/40 rounded-xl p-4 border border-powder-200/30"
+                >
+                  <code class="text-sm text-powder-700 font-medium"
+                    >GerenciadorFuncionarios.java</code
+                  >
+                  <p class="text-xs text-powder-600 mt-1 font-light">
+                    Classe de gerenciamento
+                  </p>
+                </div>
+                <div
+                  class="bg-sage-50/40 rounded-xl p-4 border border-sage-200/30"
+                >
+                  <code class="text-sm text-sage-700 font-medium"
+                    >Main.java</code
+                  >
+                  <p class="text-xs text-sage-600 mt-1 font-light">
+                    Classe principal de demonstração
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <h3
+                class="font-medium text-powder-700 mb-4 flex items-center justify-center gap-3"
+              >
+                <div
+                  class="w-8 h-8 bg-lavender-200/50 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-lavender-600 text-sm">✅</span>
+                </div>
+                Critérios de Aceite
+              </h3>
+              <ul class="space-y-3 text-powder-600 text-sm font-light">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-sage-400 rounded-full mt-2"
+                  ></span>
+                  Código compila sem erros
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                  ></span>
+                  Todas as funcionalidades implementadas
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-peach-400 rounded-full mt-2"
+                  ></span>
+                  Encapsulamento aplicado corretamente
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-powder-400 rounded-full mt-2"
+                  ></span>
+                  Herança e polimorfismo demonstrados
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-sage-400 rounded-full mt-2"
+                  ></span>
+                  Arrays manipulados adequadamente
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-1.5 h-1.5 bg-lavender-400 rounded-full mt-2"
+                  ></span>
+                  Saída formatada e organizada
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-12 text-powder-400 text-sm font-light">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <div class="w-1 h-1 bg-powder-300 rounded-full"></div>
+          <div class="w-1 h-1 bg-powder-300 rounded-full"></div>
+          <div class="w-1 h-1 bg-powder-300 rounded-full"></div>
+        </div>
+        <p>
+          Sistema de Funcionários · Documento de Requisitos v1.0 · Programação
+          Orientada a Objetos
+        </p>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
